@@ -1,0 +1,155 @@
+<html>
+<head>
+<script type="text/javascript">
+var form=document.createElement("form");
+var table=document.createElement("table");
+
+function createform()
+{
+    //alert("hello");
+    var txtname=document.createElement("input");
+    var btnsubmit=document.createElement("input");
+    var txtnumber=document.createElement("input");
+    var txtemail=document.createElement("input");
+    var state=document.createElement("select");
+    
+    var soption=document.createElement("option");
+    var soption2=document.createElement("option");
+    soption.text="Gujarat";
+    soption.value="Gujarat";
+    soption2.text="Maharashtra";
+    soption2.value="Maharashtra";
+    state.appendChild(soption);
+    state.appendChild(soption2);
+    var city=document.createElement("select");
+    var coption=document.createElement("option");
+    var coption2=document.createElement("option");
+    
+    // coption.text="Ahmedabad";
+    // coption.value="Ahmedabad";
+    // coption2.text="Surat";
+    // coption2.value="Surat";
+    // city.appendChild(coption);
+    // city.appendChild(coption2);
+    state.addEventListener("change",fillcity);
+    function fillcity()
+    {
+        city.innerHTML=null;
+            if(state.value=="Gujarat")
+            {
+                var cityarray=["Ahmedabad","Surat","Baroda","Rajkot"];
+                for(var i=0;i<cityarray.length;i++)
+                {
+                    var op=document.createElement("option");
+                    op.text=cityarray[i];
+                    op.value=cityarray[i];
+                    city.appendChild(op);
+                }
+            }
+            
+        if(state.value=="Maharashtra")
+        {
+                var cityarray=["Mumbai","Andheri","Boriwali","Pune"];
+                for(var i=0;i<cityarray.length;i++)
+                {
+                    var op=document.createElement("option");
+                    op.text=cityarray[i];
+                    op.value=cityarray[i];
+                    city.appendChild(op);
+                }
+        }
+    }
+    var hobbies=document.createElement("input");
+    var div1=document.createElement("div");
+    var span=document.createElement("span");
+    hobbies.setAttribute("type","checkbox");
+    hobbies.setAttribute("name","cricket");
+    span.innerHTML="cricket";
+    div1.appendChild(hobbies);
+    div1.appendChild(span);
+   
+
+    var hobbies=document.createElement("input");
+    
+    var span=document.createElement("span");
+    hobbies.setAttribute("type","checkbox");
+    hobbies.setAttribute("name","reading");
+    span.innerHTML="reading";
+    div1.appendChild(hobbies);
+    div1.appendChild(span);
+   
+
+    var hobbies=document.createElement("input");
+    
+    var span=document.createElement("span");
+    hobbies.setAttribute("type","checkbox");
+    hobbies.setAttribute("name","writing");
+    span.innerHTML="writing";
+    div1.appendChild(hobbies);
+    div1.appendChild(span);
+   
+
+    var male=document.createElement("input");
+    var div=document.createElement("div");
+    var span=document.createElement("span");
+    male.setAttribute("type","radio");
+    male.setAttribute("name","gen");
+    span.innerHTML="male";
+    div.appendChild(male);
+    div.appendChild(span);
+   
+
+    var female=document.createElement("input");
+    //var gradio=document.createElement("radio");
+    var span=document.createElement("span");
+    female.setAttribute("type","radio");
+    female.setAttribute("name","gen");
+    span.innerHTML="female";
+    div.appendChild(female);
+    div.appendChild(span);
+    table.setAttribute("cellspacing","5");
+    table.setAttribute("cellpadding","5");
+    txtname.setAttribute("type","name");
+    txtemail.setAttribute("type","email");    
+    txtnumber.setAttribute("type","number");
+    btnsubmit.setAttribute("type","submit");
+    txtname.required=true;
+    txtemail.required=true;
+    txtnumber.required=true;
+    txtname.placeholder="enter name";
+    txtnumber.placeholder="enter number";
+    txtemail.placeholder="enter email";
+    form.appendChild(txtname);
+    form.appendChild(txtnumber);
+    form.appendChild(txtemail);
+    form.appendChild(btnsubmit);
+    //document.body.appendChild(txtname);
+    document.body.appendChild(form);
+    addrow(txtname);
+    addrow(txtemail);
+    addrow(txtnumber);
+    addrow(state);
+    addrow(city);
+    addrow(div);
+    addrow(div1);
+    addrow(btnsubmit);
+    //addrow(gender1);
+    
+    form.appendChild(table);
+}
+
+function addrow(txtelement)
+{
+    var tr=document.createElement("tr");
+    var td=document.createElement("td");
+    td.appendChild(txtelement);
+    tr.appendChild(td);
+    table.appendChild(tr);
+}
+
+</script>
+</head>
+<body onload="createform();">
+    
+</body>
+</html>
