@@ -1,0 +1,69 @@
+<html>
+<head>
+<link type=text/css rel="stylesheet" href="C:\Users\MahavirSinh\Downloads\html\css\style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel = "icon" href ="F:\1-Mahavir\HTML\pexels-photo-414612.jpeg" type = "image/x-icon">
+    <script>
+     $(document).ready(function () {
+            $("btn").click(function () {
+                $("div").toggle();
+            });
+        
+		
+		$("#slide").ready(function () {
+           // $("slidediv").slidetoggle("slow");
+            });
+			
+		$("#btn1").click(function () {
+            $("#animate").animate({left:"100px"},"slow");
+			$("#animate").animate({top:"200px"},"slow");
+			$("#animate").animate({left:"0px"},"slow");
+			$("#animate").animate({top:"0px"},"slow");
+            });
+			
+		$("#btn2").click(function () {
+            $("#box").animate({height:"100px",width:"100px"},"slow");
+            });
+			
+		$("#btn3").click(function () {
+            $("#box").animate({height:"200px",width:"200px"},"slow");
+            });
+			
+		$("#popup").click(function () {
+			var pop=$("#popup");
+			if(pop[0].clientWidth==30){
+				$("#popup").animate({"width":"200px"},"slow");
+			}
+            else
+				$("#popup").animate({"width":"30px"},"slow");
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+<button id="btn">Click</button>
+<div>this is my header</div>
+<button id="btn1">animate</button>
+
+<div id="animate" style="position:relative;">This is my slider</div>
+<br>
+
+<button id="btn3">box increase</button>
+<button id="btn2">box reduce</button>
+<div id="box" style="position:relative;height:100px;width:100px;background-color:red;"></div>
+<br>
+
+
+<div id="popup" style="position:relative;height:25px;width:30px;background-color:lightgreen;overflow:hidden;font-size:25px;">
+>
+
+<a href="https://www.facebook.com">
+<img src="F1.png">
+</a>
+<
+</div>
+</div>
+
+</body>
+</html>
